@@ -22,19 +22,20 @@ Body in Markdown. Use `##` for section headings (the title is already the page `
 
 ## Front matter reference
 
-| Field                          | Required             | Type         | Used for                                                                                                                                       |
-| ------------------------------ | -------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `layout`                       | Yes                  | string       | Must be `post.ejs`                                                                                                                             |
-| `title`                        | Yes                  | string       | Page `<h1>`, `<title>`, cards, feed, JSON-LD headline                                                                                          |
-| `date`                         | Yes                  | `YYYY-MM-DD` | Publication date and sort order (newest first). Shown in UTC                                                                                   |
-| `category`                     | Yes                  | string       | Single category; drives `/categories/<slug>/`. Posts without one are omitted from category lists                                               |
-| `tags`                         | No                   | list         | Each tag gets a `/tags/<slug>/` page and appears in the tag cloud                                                                              |
-| `excerpt`                      | Strongly recommended | string       | Card text, `<meta description>`, Open Graph, RSS `<description>`                                                                               |
-| `image`                        | Yes                  | path         | Hero image, card thumbnail, sidebar thumbnail. Absolute path under `/assets/images/`                                                           |
-| `imageAlt`                     | Yes                  | string       | Alt text for the image. **The build fails with `imageAlt is not defined` if it is missing.** Use `imageAlt: ""` for a purely decorative image  |
-| `featured`                     | No                   | boolean      | `true` makes the post eligible for the homepage hero (first 3 featured, newest first)                                                          |
-| `related`                      | No                   | list         | Post filenames without `.md`; up to 5 shown under the article. Unknown names and self-references are ignored                                   |
-| `pageTitle`, `metaDescription` | No                   | string       | Override `<title>` prefix / meta description if `title` / `excerpt` are unsuitable                                                             |
+| Field                          | Required             | Type         | Used for                                                                                                                                        |
+| ------------------------------ | -------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `layout`                       | Yes                  | string       | Must be `post.ejs`                                                                                                                              |
+| `title`                        | Yes                  | string       | Page `<h1>`, `<title>`, cards, feed, JSON-LD headline                                                                                           |
+| `date`                         | Yes                  | `YYYY-MM-DD` | Publication date and sort order (newest first). Shown in UTC                                                                                    |
+| `category`                     | Yes                  | string       | Single category; drives `/categories/<slug>/`. Posts without one are omitted from category lists                                                |
+| `tags`                         | Recommended          | list         | Each tag gets a `/tags/<slug>/` page and appears in the tag cloud. `post.ejs` reads `tags` without a guard, so give every post at least one tag |
+| `excerpt`                      | Strongly recommended | string       | Card text, `<meta description>`, Open Graph, RSS `<description>`                                                                                |
+| `image`                        | Yes                  | path         | Hero image, card thumbnail, sidebar thumbnail. Absolute path under `/assets/images/`                                                            |
+| `imageAlt`                     | Yes                  | string       | Alt text for the image. **The build fails with `imageAlt is not defined` if it is missing.** Use `imageAlt: ""` for a purely decorative image   |
+| `featured`                     | No                   | boolean      | `true` makes the post eligible for the homepage hero (first 3 featured, newest first)                                                           |
+| `related`                      | No                   | list         | Post filenames without `.md`; up to 5 shown under the article. Unknown names and self-references are ignored                                    |
+| `relatedCategories`            | No                   | list         | Category names shown in this post's sidebar instead of the 8 most-used. Unknown names are ignored; an "All categories" link is always added     |
+| `pageTitle`, `metaDescription` | No                   | string       | Override `<title>` prefix / meta description if `title` / `excerpt` are unsuitable                                                              |
 
 ## Adding images
 
