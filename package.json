@@ -1,0 +1,41 @@
+{
+  "name": "aayusharyan/stories",
+  "version": "0.1.0",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
+  "type": "module",
+  "description": "Source for Aayush Sinha's personal Eleventy blog about technology, projects, finance, travel, and life.",
+  "author": {
+    "name": "Aayush Sinha",
+    "email": "hello@yush.dev",
+    "url": "https://yush.dev"
+  },
+  "homepage": "https://stories.yush.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aayusharyan/stories.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aayusharyan/stories/issues"
+  },
+  "keywords": [
+    "blog",
+    "eleventy",
+    "ejs",
+    "personal-site",
+    "static-site"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-ejs": "^1.0.0",
+    "ejs": "^3.1.10"
+  }
+}
