@@ -18,6 +18,7 @@ Plain CSS, served unmodified from `src/assets/css/` (no preprocessor or bundler)
 | `sidebar.css`          | Sidebar                 | Article, blog, category, tag             | Author, recent posts, categories, tag cloud                                                    |
 | `page-title.css`       | Component               | Article, blog, category, tag, categories | Page banner and breadcrumb                                                                     |
 | `categories.css`       | Page                    | `categories/index.ejs`                   | Category directory cards                                                                       |
+| `tags.css`             | Page                    | `tags/index.ejs`                         | Tag directory chips                                                                            |
 | `not-found.css`        | Page                    | `404.ejs`                                | 404 layout                                                                                     |
 
 Load order in `head.ejs`: bootstrap, font-awesome, `vendorStyles` (e.g. Owl Carousel), `base`, `header`, the page's `styles`, `footer`.
@@ -30,5 +31,6 @@ Load order in `head.ejs`: bootstrap, font-awesome, `vendorStyles` (e.g. Owl Caro
 
 ## Fonts
 
-- Google Fonts (Quicksand, Spectral) are requested from `head.ejs`, so the site depends on that service. To self-host, download the font files, add `@font-face` rules to `base.css` and remove the `<link>` in `head.ejs`.
+- IBM Plex Sans is the heading and display face. Its normal (weights 400–700) and italic (weights 400–500) variable WOFF2 files are self-hosted in `src/assets/fonts/`; the `@font-face` declarations and `--font-heading` stack live in `base.css`.
+- Quicksand is the body face. Its variable WOFF2 files (weights 300–500) are self-hosted in `src/assets/fonts/`; the `@font-face` declarations and `--font-body` stack live in `base.css`.
 - Font Awesome 4 is loaded from `assets/fonts/` (referenced by `font-awesome.min.css`).
