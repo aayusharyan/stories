@@ -1,0 +1,27 @@
+{
+  "title": "Stories of Aayush Sinha",
+  "description": "A personal journal of stories about technology, projects, finance, travel, and life—shared with the world.",
+  "url": "https://stories.yush.dev",
+  "language": "en",
+  "author": {
+    "name": "Aayush Sinha",
+    "email": "hello@yush.dev",
+    "bio": "Software engineer, finance enthusiast, and curious traveler who loves tinkering with technology, building things, and sharing ideas about engineering, personal finance, and life.",
+    "avatar": "/assets/images/blog/author.jpg"
+  },
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "Articles", "url": "/blog/" },
+    { "label": "Categories", "url": "/categories/" }
+  ],
+  "social": [
+    { "label": "GitHub", "url": "https://github.com/aayusharyan", "icon": "github" },
+    { "label": "Medium", "url": "https://medium.com/@aayusharyan", "icon": "medium" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/aayushsinha", "icon": "linkedin" },
+    { "label": "Email", "url": "mailto:hello@yush.dev", "icon": "envelope" }
+  ],
+  "newsletter": {
+    "enabled": true,
+    "action": ""
+  }
+}
