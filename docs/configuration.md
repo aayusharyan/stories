@@ -34,14 +34,14 @@ Evaluated once per build.
 
 ## `eleventy.config.js`
 
-| Section          | What it configures                                                     |
-| ---------------- | ---------------------------------------------------------------------- |
-| Passthrough copy | `src/assets` -> `public/assets` (not processed)                        |
-| Watch target     | `src` is watched in dev so component/layout/data edits rebuild         |
-| EJS setup        | Include resolution relative to `src/`; plugin registration             |
-| Helpers          | See [Collections & filters](collections-and-filters.md)                |
-| Collections      | `posts`, `featuredPosts`, `categoryList`, `tagList`                    |
-| Return object    | Directories and template engines (see [Architecture](architecture.md)) |
+| Section          | What it configures                                                               |
+| ---------------- | -------------------------------------------------------------------------------- |
+| Passthrough copy | `src/assets` -> `public/assets` (not processed)                                  |
+| Watch target     | `src` is watched in dev so component/layout/data edits rebuild                   |
+| EJS setup        | Include resolution relative to `src/`; plugin registration                       |
+| Helpers          | See [Collections & filters](collections-and-filters.md)                          |
+| Collections      | `posts`, `featuredPosts`, `categoryList`, `tagList`, `categoryPages`, `tagPages` |
+| Return object    | Directories and template engines (see [Architecture](architecture.md))           |
 
 ## `package.json` scripts
 
@@ -55,5 +55,5 @@ Requires Node.js 18 or newer (`engines` in `package.json`).
 
 ## `.eleventyignore` and `.gitignore`
 
-- `.eleventyignore` is a safety net: Eleventy only reads `src/pages` (the `input` directory), so files elsewhere such as `README.md`, `docs/`, `documentation/` and `html_template/` are not built anyway. It matters only if the input directory is ever widened.
+- `.eleventyignore` is a safety net: Eleventy only reads `src/pages` (the `input` directory), so files elsewhere such as `README.md`, `docs/`, `documentation/` and `html_template/` are not built anyway. It currently lists `README.md`, `documentation/`, `html_template/`, `.reference-11ty-ejs-boilerplate/`, `node_modules/` and `public/`; `docs/` is not listed because it is already outside `src/pages`. It matters only if the input directory is ever widened.
 - `.gitignore` excludes `node_modules/`, `public/`, `.DS_Store`, and `.env`.
