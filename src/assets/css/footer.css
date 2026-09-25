@@ -1,0 +1,60 @@
+/**
+ * Site footer and back-to-top button.
+ *
+ * Loaded on every page (always last). Markup: components/footer.ejs. The .show class on .back-to-top is toggled by
+ * assets/js/scripts.js section 08 once the page is scrolled 400px.
+ *
+ * See docs/styling.md.
+ */
+/* ************************
+ *
+ * Footer
+ *
+ * ********************* */
+.footer-container {
+  background-color: #fffcfc;
+  padding: 40px 0px;
+}
+@media only screen and (max-width: 991px) {
+  .footer-container {
+    padding: 25px 0px;
+  }
+}
+
+.footer > div {
+  padding: 15px 0px;
+}
+
+.footer-social a i {
+  margin: 0px 7.5px;
+}
+
+.back-to-top {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 0px;
+  right: 40px;
+  background-color: #232323;
+  color: #ffffff;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -99;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.back-to-top.show {
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  bottom: 40px;
+}
+.back-to-top:hover {
+  background-color: #FF7171;
+}
+
+.back-to-top {
+  border: 0;
+}
