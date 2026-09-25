@@ -1,0 +1,188 @@
+/**
+ * Site header, sticky bar, primary/mobile navigation and skip link.
+ *
+ * Loaded on every page. Markup: components/header.ejs. Behaviour (sticky class, mobile toggle): assets/js/scripts.js sect. 04.
+ * No dropdown/sub-menu styles exist; add them here if site.nav ever needs nesting. Also contains the fadeInDown animation.
+ *
+ * See docs/styling.md.
+ */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -40px, 0);
+    transform: translate3d(0, -40px, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -40px, 0);
+    transform: translate3d(0, -40px, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+/* ************************
+ *
+ * Navbar
+ *
+ * ********************* */ 
+.header {
+  min-height: 107px;
+}
+.header .header-fixed {
+  padding: 20px 0px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.header .header-fixed.is-sticky {
+  padding: 0px 0px;
+  background-color: #fff;
+}
+@media only screen and (max-width: 991px) {
+  .header .logo {
+    margin-left: 30px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .header .logo {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .nav-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    padding: 0px 15px 0px 45px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: -99;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .nav-menu {
+    padding: 0px 0px 0px 15px;
+  }
+}
+.nav-menu.show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 99;
+}
+@media only screen and (max-width: 991px) {
+  .nav-menu.show {
+    margin-top: 0;
+  }
+}
+.nav-menu li {
+  position: relative;
+}
+.nav-menu li:hover > a {
+  color: #FF7171;
+}
+.nav-menu li a {
+  color: #333;
+  display: block;
+}
+.nav-menu > li {
+  margin-right: 30px;
+  padding: 20px 0px;
+}
+@media only screen and (max-width: 991px) {
+  .nav-menu > li {
+    padding: 15px 0px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .nav-menu > li:first-child {
+    margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .nav-menu > li:last-child {
+    margin-bottom: 15px;
+  }
+}
+.nav-menu > li > a {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 18px;
+}
+@media only screen and (max-width: 991px) {
+  .nav-menu > li > a {
+    font-size: 20px;
+  }
+}
+
+.mobile-nav-menu li {
+  padding: 20px 0px;
+  cursor: pointer;
+}
+.mobile-nav-menu li.nav-menu-toggle {
+  display: none;
+  margin-right: 30px;
+}
+@media only screen and (max-width: 991px) {
+  .mobile-nav-menu li.nav-menu-toggle {
+    display: block;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .mobile-nav-menu li.nav-menu-toggle {
+    margin-right: 0;
+  }
+}
+.mobile-nav-menu li svg {
+  height: 15px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 99999;
+  top: 1rem;
+  left: 1rem;
+  padding: .75rem 1rem;
+  background: #fff;
+  color: #111;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.nav-menu a.active,
+.nav-menu a[aria-current="page"] {
+  color: var(--biz-accent);
+}
