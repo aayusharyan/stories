@@ -5,7 +5,6 @@
   "language": "en",
   "author": {
     "name": "Aayush Sinha",
-    "email": "hello@yush.dev",
     "bio": "Software engineer, finance enthusiast, and curious traveler who loves tinkering with technology, building things, and sharing ideas about engineering, personal finance, and life.",
     "avatar": "/assets/images/blog/author.jpg"
   },
@@ -18,10 +17,7 @@
     { "label": "GitHub", "url": "https://github.com/aayusharyan", "icon": "github" },
     { "label": "Medium", "url": "https://medium.com/@aayusharyan", "icon": "medium" },
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/aayushsinha", "icon": "linkedin" },
-    { "label": "Email", "url": "mailto:hello@yush.dev", "icon": "envelope" }
-  ],
-  "newsletter": {
-    "enabled": true,
-    "action": ""
-  }
+    { "label": "Email", "url": "mailto:hello@yush.dev", "icon": "envelope" },
+    { "label": "RSS feed", "url": "/feed.xml", "icon": "rss" }
+  ]
 }
