@@ -1,0 +1,51 @@
+/**
+ * Category directory cards (/categories/).
+ *
+ * Used only by pages/categories/index.ejs (class .category-card).
+ *
+ * See docs/styling.md.
+ */
+.category-card {
+  position: relative;
+  margin-bottom: 30px;
+  overflow: hidden;
+  background: #111;
+}
+
+.category-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  opacity: .68;
+  transition: transform .35s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.025);
+}
+
+.category-card-copy {
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 26px;
+  color: #fff;
+}
+
+.category-card-copy h2 {
+  margin: 0;
+}
+
+.category-card-copy h2 a {
+  color: #fff;
+}
+
+.category-card-copy p {
+  margin: 5px 0 0;
+}
+
+@media (max-width: 575px) {
+  .category-card img {
+    height: 260px;
+  }
+}
