@@ -1,0 +1,199 @@
+/**
+ * Homepage hero carousel (featured posts) and its thumbnail-style pager.
+ *
+ * Used only by pages/index.ejs (front matter `styles: [banner]`). Requires owl.carousel.min.css (vendorStyles).
+ * The carousel is initialised in assets/js/banner.js. Includes the fadeIn/fadeOut keyframes used by
+ * Owl's animateIn/animateOut.
+ *
+ * See docs/styling.md.
+ */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+/* ************************
+ *
+ * Banner
+ *
+ * ********************* */ 
+.banner-slider-cover {
+  min-height: 900px;
+  padding: 15px 0px 25px 0px;
+}
+@media only screen and (max-width: 991px) {
+  .banner-slider-cover {
+    min-height: 0px;
+    padding-top: 98px;
+    padding-bottom: 100px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .banner-slider-cover {
+    padding-top: 78px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .banner-slider-cover {
+    padding-top: 58px;
+    padding-bottom: 22px;
+  }
+}
+
+.banner-slide .banner-slide-text .category {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.banner-slide .banner-slide-text .category:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 100%;
+  height: 1px;
+  width: 45px;
+  background-color: #FF7171;
+  margin-left: 10px;
+}
+.banner-slide .banner-slide-text .category a {
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: #FF7171;
+  font-size: 18px;
+}
+.banner-slide .banner-slide-text h1 {
+  font-weight: 700;
+  font-size: 46px;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 991px) {
+  .banner-slide .banner-slide-text h1 {
+    font-size: 28px;
+  }
+}
+.banner-slide .banner-slide-text .desc {
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 991px) {
+  .banner-slide .banner-slide-text .desc {
+    font-size: 14px;
+  }
+}
+.banner-slide .banner-slide-text .btn-primary {
+  margin-top: 20px;
+}
+.banner-slide .banner-slide-image {
+  overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  .banner-slide .banner-slide-image {
+    margin-bottom: 50px;
+  }
+}
+
+.banner-slider-dots {
+  margin-top: 80px;
+  padding: 0px 40px;
+}
+@media only screen and (max-width: 991px) {
+  .banner-slider-dots {
+    display: none !important;
+  }
+}
+.banner-slider-dots .owl-stage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.banner-slider-dots .active .dots-count {
+  padding-bottom: 17px;
+  position: relative;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  font-family: var(--font-heading);
+  color: #c2c2c2;
+  cursor: pointer;
+}
+.banner-slider-dots .active .dots-count .process-bar {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #c2c2c2;
+}
+.banner-slider-dots .active .dots-count .process-bar-active {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0;
+  height: 2px;
+  background-color: #232323;
+}
+.banner-slider-dots .active.current .dots-count {
+  color: #232323;
+}
+.banner-slider-dots .active.current .dots-count .process-bar {
+  background-color: #dbdbdb;
+}
+.banner-slider-dots .active.current .dots-count .process-bar-active {
+  -webkit-transition: width 4.9s;
+  transition: width 4.9s;
+  width: 100%;
+}
+
+.banner-slide .banner-slide-text h2 {
+  color: #333;
+  font-size: 48px;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 575px) {
+  .banner-slide .banner-slide-text h2 {
+    font-size: 32px;
+  }
+}
